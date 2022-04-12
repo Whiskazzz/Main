@@ -1,10 +1,10 @@
 package com.daniil;
 
-public class ArabicNum {
+ class ArabicNum {
 
-    double number;
+    int number;
 
-    public ArabicNum(double number) {
+    public ArabicNum(int number) {
         this.number = number;
     }
     public ArabicNum(String number) {
@@ -13,7 +13,7 @@ public class ArabicNum {
 
     public RomanNum toRoman(){
         StringBuilder result = new StringBuilder();
-        int temp = (int)number;
+        int temp = number;
         Numbers[] numbers = Numbers.values();
         while (temp>0) {
             for (Numbers value : numbers) {

@@ -1,6 +1,6 @@
 package com.daniil;
 
-public class RomanNum{
+ class RomanNum{
     String number;
 
     public RomanNum(String number) {
@@ -46,7 +46,7 @@ public class RomanNum{
     }
 
     public RomanNum minus(RomanNum a) throws IncorrectInputException {
-        double d = this.toArabic().number-a.toArabic().number;
+        int d = this.toArabic().number-a.toArabic().number;
         if (d<1) {
             throw new IncorrectInputException("too low for Rome");
         }
@@ -58,7 +58,7 @@ public class RomanNum{
     }
 
     public RomanNum divide(RomanNum a) throws IncorrectInputException {
-        double d = this.toArabic().number/a.toArabic().number;
+        int d = this.toArabic().number/a.toArabic().number;
         if (d<1) {
             throw new IncorrectInputException("too low for Rome");
         }

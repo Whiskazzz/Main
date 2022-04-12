@@ -1,6 +1,6 @@
 package com.daniil;
 
-public enum Numbers {
+ enum Numbers {
 
     C("C",100),
     XC("XC",90),
