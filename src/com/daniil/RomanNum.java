@@ -46,7 +46,7 @@ public class RomanNum{
     }
 
     public RomanNum minus(RomanNum a) throws IncorrectInputException {
-        double d = a.toArabic().number-this.toArabic().number;
+        double d = this.toArabic().number-a.toArabic().number;
         if (d<1) {
             throw new IncorrectInputException("too low for Rome");
         }
