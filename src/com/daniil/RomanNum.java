@@ -35,8 +35,8 @@ public class RomanNum{
 
     }
 
-    public static boolean isRoman(String s){
-        return s.matches("^(M{0,3})(D?C{0,3}|C[DM])(L?X{0,3}|X[LC])(V?I{0,3}|I[VX])$");
+    public static boolean isRoman(String s) {
+        return s.matches("^(X?|V?I{0,3}|I[VX])$");
     }
 
 
@@ -45,17 +45,26 @@ public class RomanNum{
         return new ArabicNum(a.toArabic().number+this.toArabic().number).toRoman();
     }
 
-    public RomanNum minus(RomanNum a) {
-        return new ArabicNum(a.toArabic().number-this.toArabic().number).toRoman();
+    public RomanNum minus(RomanNum a) throws IncorrectInputException {
+        double d = a.toArabic().number-this.toArabic().number;
+        if (d<1) {
+            throw new IncorrectInputException("too low for Rome");
+        }
+        return new ArabicNum(d).toRoman();
     }
 
     public RomanNum multiply(RomanNum a) {
         return new ArabicNum(a.toArabic().number*this.toArabic().number).toRoman();
     }
 
-    public RomanNum divide(RomanNum a) {
+    public RomanNum divide(RomanNum a) throws IncorrectInputException {
         double d = this.toArabic().number/a.toArabic().number;
+        if (d<1) {
+            throw new IncorrectInputException("too low for Rome");
+        }
         ArabicNum arabicNum = new ArabicNum(d);
         return arabicNum.toRoman();
     }
+
+
 }

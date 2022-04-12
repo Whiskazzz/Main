@@ -14,9 +14,6 @@ public class ArabicNum {
     public RomanNum toRoman(){
         StringBuilder result = new StringBuilder();
         int temp = (int)number;
-        if (number%temp>0){
-            System.out.println("!!!");
-        }
         Numbers[] numbers = Numbers.values();
         while (temp>0) {
             for (Numbers value : numbers) {
@@ -31,10 +28,10 @@ public class ArabicNum {
         return new RomanNum(result.toString());
     }
 
-    public static boolean isArabic(String s){
+    public static boolean isArabic(String s) {
         try {
-            Integer.parseInt(s);
-            return true;
+            int i = Integer.parseInt(s);
+            return i > 0 && i < 11;
         } catch (NumberFormatException e) {
             return false;
         }
