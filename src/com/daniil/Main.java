@@ -21,9 +21,6 @@ public class Main{
         }
 
 
-
-
-
     }
     public static String calc(String input) throws IncorrectInputException {
         setParam(input);
@@ -31,39 +28,39 @@ public class Main{
         switch (operation) {
             case "-" -> {
                 if (RomanNum.isRoman(a) && RomanNum.isRoman(b)) {
-                    result = new RomanNum(a).minus(new RomanNum(b)).number;
+                    result = new RomanNum(a).minus(new RomanNum(b)).getNumber();
                 } else if (ArabicNum.isArabic(a) && ArabicNum.isArabic(b)) {
-                    result = String.valueOf(new ArabicNum(a).minus(new ArabicNum(b)).number);
+                    result = String.valueOf(new ArabicNum(a).minus(new ArabicNum(b)).getNumber());
                 } else throw new IncorrectInputException("IncorectInput");
 
             }
             case "+" -> {
                 if (RomanNum.isRoman(a) && RomanNum.isRoman(b)) {
-                    result = new RomanNum(a).plus(new RomanNum(b)).number;
+                    result = new RomanNum(a).plus(new RomanNum(b)).getNumber();
                 } else if (ArabicNum.isArabic(a) && ArabicNum.isArabic(b)) {
-                    result = String.valueOf(new ArabicNum(a).plus(new ArabicNum(b)).number);
+                    result = String.valueOf(new ArabicNum(a).plus(new ArabicNum(b)).getNumber());
                 } else throw new IncorrectInputException("IncorectInput");
             }
             case "/" -> {
                 if (RomanNum.isRoman(a) && RomanNum.isRoman(b)) {
-                    result = new RomanNum(a).divide(new RomanNum(b)).number;
+                    result = new RomanNum(a).divide(new RomanNum(b)).getNumber();
                 } else if (ArabicNum.isArabic(a) && ArabicNum.isArabic(b)) {
-                    result = String.valueOf(new ArabicNum(a).divide(new ArabicNum(b)).number);
+                    result = String.valueOf(new ArabicNum(a).divide(new ArabicNum(b)).getNumber());
                 } else throw new IncorrectInputException("IncorectInput");
 
             }
             case "*" -> {
                 if (RomanNum.isRoman(a) && RomanNum.isRoman(b)) {
-                    result = new RomanNum(a).multiply(new RomanNum(b)).number;
+                    result = new RomanNum(a).multiply(new RomanNum(b)).getNumber();
                 } else if (ArabicNum.isArabic(a) && ArabicNum.isArabic(b)) {
-                    result = String.valueOf(new ArabicNum(a).multiply(new ArabicNum(b)).number);
+                    result = String.valueOf(new ArabicNum(a).multiply(new ArabicNum(b)).getNumber());
                 } else throw new IncorrectInputException("IncorectInput");
             }
         }
         return result;
     }
 
-    static void setParam(String s) throws IncorrectInputException {
+    private static void setParam(String s) throws IncorrectInputException {
 
         if (s.length()<3 || !(s.contains("/") || s.contains("-") || s.contains("+") || s.contains("*"))) throw new IncorrectInputException("IncorectInput");
 

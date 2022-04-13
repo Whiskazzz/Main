@@ -1,12 +1,21 @@
 package com.daniil;
 
- class ArabicNum {
+class ArabicNum {
 
-    int number;
+    private int number;
 
     public ArabicNum(int number) {
         this.number = number;
     }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     public ArabicNum(String number) {
         this.number = Integer.parseInt(number);
     }

@@ -1,11 +1,20 @@
 package com.daniil;
 
  class RomanNum{
-    String number;
+    private String number;
 
-    public RomanNum(String number) {
+
+
+     public RomanNum(String number) {
         this.number = number;
     }
+     public String getNumber() {
+         return number;
+     }
+
+     public void setNumber(String number) {
+         this.number = number;
+     }
 
     public ArabicNum toArabic(){
         int result = 0;
@@ -42,11 +51,11 @@ package com.daniil;
 
     public RomanNum plus(RomanNum a) {
 
-        return new ArabicNum(a.toArabic().number+this.toArabic().number).toRoman();
+        return new ArabicNum(a.toArabic().getNumber()+this.toArabic().getNumber()).toRoman();
     }
 
     public RomanNum minus(RomanNum a) throws IncorrectInputException {
-        int d = this.toArabic().number-a.toArabic().number;
+        int d = this.toArabic().getNumber()-a.toArabic().getNumber();
         if (d<1) {
             throw new IncorrectInputException("too low for Rome");
         }
@@ -54,11 +63,11 @@ package com.daniil;
     }
 
     public RomanNum multiply(RomanNum a) {
-        return new ArabicNum(a.toArabic().number*this.toArabic().number).toRoman();
+        return new ArabicNum(a.toArabic().getNumber()*this.toArabic().getNumber()).toRoman();
     }
 
     public RomanNum divide(RomanNum a) throws IncorrectInputException {
-        int d = this.toArabic().number/a.toArabic().number;
+        int d = this.toArabic().getNumber()/a.toArabic().getNumber();
         if (d<1) {
             throw new IncorrectInputException("too low for Rome");
         }
